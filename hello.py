@@ -21,5 +21,13 @@ __version__ = "0.0.1"
 __author__  = "Alexandre Souza"
 __license__ = "Unlicense"
 
-# Este programa imprime o Hello World
-print("Hello, World") # Outro comentario
+current_language = "en_US"
+# variavel no padrao snake case
+msg = "Hello, World"
+
+if current_language == "pt_BR":
+    msg = "Olá, Mundo!"
+elif current_language == "it_IT":
+    msg = "Ciao, Mondo!"
+
+print(msg) # comentario
