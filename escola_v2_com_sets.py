@@ -10,7 +10,7 @@ __license__ = "Unlicense"
 
 ### Dados
 sala1 = ["Erik", "Maia", "Gustavo", "Manuel", "Sofia", "Joana"]
-sala2 = ["Joana", "Antonio", "Carlos", "Maria", "Isolda"]
+sala2 = ["Joao", "Antonio", "Carlos", "Maria", "Isolda"]
 
 aula_ingles = ["Erik","Maia","Joana","Carlos","Antonio"]
 aula_musica = ["Erik","Carlos","Maria"]
