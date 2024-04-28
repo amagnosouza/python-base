@@ -30,11 +30,11 @@ current_language = os.getenv("LANG", "en_US")[:5] # en_US variavel padrao
 # Orden O(1)
 
 msg ={
-    "en_US": "Hello, World!",
-    "pt_BR": "Olá, Mundo!",
-    "it_IT": "Ciao, Mondo!",
-    "es_SP": "Hola, Mundo!",
-    "fr_FR": "Bonjour, Mond!",
+    "en_US": "Hello, World! 🇺🇸",
+    "pt_BR": "Olá, Mundo! 🇧🇷",
+    "it_IT": "Ciao, Mondo! 🇮🇹",
+    "es_SP": "Hola, Mundo! 🇪🇸",
+    "fr_FR": "Bonjour, Mond! 🇫🇷",
 }
 
 print(msg[current_language])
