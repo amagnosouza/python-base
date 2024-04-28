@@ -18,7 +18,7 @@ Execução:
     ou
     ./hello.py
 """
-__version__ = "0.0.1"
+__version__ = "0.1.2"
 __author__  = "Alexandre Souza"
 __license__ = "Unlicense"
 
@@ -27,15 +27,30 @@ import os # biblioteca externa
 current_language = os.getenv("LANG", "en_US")[:5] # en_US variavel padrao
 # variavel no padrao snake case
 
-msg = "Hello, World"
+# Orden O(1)
 
-if current_language == "pt_BR":
-    msg = "Olá, Mundo!"
-elif current_language == "it_IT":
-    msg = "Ciao, Mondo!"
-elif current_language == "es_SP":
-    msg = "Hola, Mundo!"
-elif current_language == "fr_FR":
-    msg = "Bonjour Monde!"
+msg ={
+    "en_US": "Hello, World!",
+    "pt_BR": "Olá, Mundo!",
+    "it_IT": "Ciao, Mondo!",
+    "es_SP": "Hola, Mundo!",
+    "fr_FR": "Bonjour, Mond!",
+}
 
-print(msg) # comentario
+print(msg[current_language])
+
+
+
+# # Ordem O(n)
+# msg = "Hello, World"
+# 
+# if current_language == "pt_BR":
+#     msg = "Olá, Mundo!"
+# elif current_language == "it_IT":
+#     msg = "Ciao, Mondo!"
+# elif current_language == "es_SP":
+#     msg = "Hola, Mundo!"
+# elif current_language == "fr_FR":
+#     msg = "Bonjour Monde!"
+
+# print(msg) # comentario
