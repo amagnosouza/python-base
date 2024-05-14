@@ -11,6 +11,7 @@ Tenha a variavel LANG devidamente configurada ex:
 
     export LANG=pt_BR ou
     LANG=it_IT python3 hello.py
+    escolha a lingua
 
 Execução:
 
@@ -18,16 +19,35 @@ Execução:
     ou
     ./hello.py
 """
-__version__ = "0.1.2"
+__version__ = "0.1.3"
 __author__  = "Alexandre Souza"
 __license__ = "Unlicense"
 
 import os # biblioteca externa
+import sys
 
-current_language = os.getenv("LANG", "en_US")[:5] # en_US variavel padrao
-# variavel no padrao snake case
+arguments = {
+    "lang": None,
+    "count": 1,
+}
+for arg in sys.argv[1:]:
+    # TODO: Tratar ValueError
+    key, value = arg.split("=")
+    key = key.lstrip("-").strip()
+    value = value.strip()
+    if key not in arguments:
+        print(f"Ivalid Option `{key}`")
+        sys.exit()
+    arguments[key] = value
 
-# Orden O(1)
+current_language = arguments["lang"]
+if current_language is None:
+    current_language = os.getenv("LANG")
+    # TODO: Usar repeticao
+    if current_language is None: 
+        current_language = input("Choose a language:")
+
+current_language = current_language[:5]
 
 msg ={
     "en_US": "Hello, World! 🇺🇸",
@@ -37,7 +57,7 @@ msg ={
     "fr_FR": "Bonjour, Mond! 🇫🇷",
 }
 
-print(msg[current_language])
+print(msg[current_language] * int(arguments["count"]))
 
 
 
